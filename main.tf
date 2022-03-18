@@ -127,7 +127,7 @@ resource "aws_security_group_rule" "template_codebuild_ssh" {
 module "codepipeline_artifact_bucket_name" {
   source = "github.com/traveloka/terraform-aws-resource-naming?ref=v0.19.1"
 
-  name_prefix   = "${var.product_domain}-codepipeline-${data.aws_caller_identity.current.account_id}-"
+  name_prefix   = "${var.product_domain}-codepipeline-${data.aws_caller_identity.current.account_id}"
   resource_type = "s3_bucket"
 }
 
@@ -171,7 +171,7 @@ resource "aws_s3_bucket" "codepipeline_artifact" {
 module "application_binary" {
   source = "github.com/traveloka/terraform-aws-resource-naming?ref=v0.19.1"
 
-  name_prefix   = "${var.product_domain}-appbin-${data.aws_caller_identity.current.account_id}-"
+  name_prefix   = "${var.product_domain}-appbin-${data.aws_caller_identity.current.account_id}"
   resource_type = "s3_bucket"
 }
 
@@ -244,7 +244,7 @@ resource "aws_s3_bucket" "application_binary" {
 module "codebuild_cache" {
   source = "github.com/traveloka/terraform-aws-resource-naming?ref=v0.19.1"
 
-  name_prefix   = "${var.product_domain}-codebuild-cache-${data.aws_caller_identity.current.account_id}-"
+  name_prefix   = "${var.product_domain}-codebuild-cache-${data.aws_caller_identity.current.account_id}"
   resource_type = "s3_bucket"
 }
 
@@ -298,7 +298,7 @@ resource "aws_s3_bucket" "codebuild_cache" {
 module "cloudtrail_logs" {
   source = "github.com/traveloka/terraform-aws-resource-naming?ref=v0.19.1"
 
-  name_prefix   = "${var.product_domain}-cloudtrail-logs-${data.aws_caller_identity.current.account_id}-"
+  name_prefix   = "${var.product_domain}-cloudtrail-logs-${data.aws_caller_identity.current.account_id}"
   resource_type = "s3_bucket"
 }
 

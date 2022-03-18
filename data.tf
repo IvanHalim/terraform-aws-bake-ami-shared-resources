@@ -328,7 +328,7 @@ data "aws_iam_policy_document" "codebuild_packer" {
     actions = [
       "iam:GetInstanceProfile",
     ]
-    
+
     resources = [
       module.template_instance_role.instance_profile_arn,
     ]
@@ -505,8 +505,8 @@ data "aws_iam_policy_document" "codepipeline_s3" {
     ]
 
     resources = [
-      "arn:aws:s3:::${var.product_domain}-appbin-${data.aws_caller_identity.current.account_id}-*",
-      "arn:aws:s3:::${var.product_domain}-appbin-${data.aws_caller_identity.current.account_id}-*/*",
+      "arn:aws:s3:::${var.product_domain}-appbin-${data.aws_caller_identity.current.account_id}*",
+      "arn:aws:s3:::${var.product_domain}-appbin-${data.aws_caller_identity.current.account_id}*/*",
     ]
   }
 }
